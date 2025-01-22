@@ -12,9 +12,7 @@ const SliderComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "https://slider-test-nine.vercel.app/data.json"
-        );
+        const response = await axios.get("./data.json");
         setItems(response.data.dining.restaurants);
         setLoading(false);
       } catch (error) {
@@ -56,20 +54,22 @@ const SliderComponent = () => {
     <div className="slider-container">
       <Slider {...settings}>
         {items.map((item) => (
-          <div key={item.id} className="slider-item">
-            <img
-              src={item.images[0]}
-              alt={item.name}
-              className="slider-image"
-            />
-            <h3>{item.name}</h3>
-            {/* <p>{item.overview}</p> */}
-            <button
-              className="visit-website-button"
-              onClick={() => window.open(item.websiteUrl, "_blank")}
-            >
-              Visit Website
-            </button>
+          <div key={item.id}>
+            <div className="card">
+              <img
+                src={item.images[0]}
+                alt={item.name}
+                className="slider-image"
+              />
+              <h2>{item.name}</h2>
+              <p>{item.overview}</p>
+              <button
+                className="visit-website-button"
+                onClick={() => window.open(item.websiteUrl, "_blank")}
+              >
+                Visit Website
+              </button>
+            </div>
           </div>
         ))}
       </Slider>
