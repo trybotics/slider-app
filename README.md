@@ -15,7 +15,7 @@ This is a React-based slider application that dynamically fetches data from an A
 
 ## Demo
 
-Check out the live version: [Slider App on Vercel](https://slider-app-opal-gamma.vercel.app/)
+Check out the live version: [Slider App on Vercel](https://slider-app-trybotics.vercel.app)
 
 ---
 
